@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ComCgSprintBusApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ComCgSprintBusApplication.class, args);
+		System.out.println("start");
+		
+	SpringApplication.run(ComCgSprintBusApplication.class, args);
+		System.out.println("end");
 	}
 
 }
