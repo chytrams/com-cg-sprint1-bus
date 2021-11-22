@@ -34,7 +34,7 @@ public class UserService implements IUserService{
 
 	@Override
 	public User updateUser(User user) {
-		LOG.info("UserService addUser");
+		LOG.info("UserService updateUser");
 		if(userRepository.existsById(user.getUserId())) {
 			LOG.info("User exists and will be updated");
 			return userRepository.save(user);
@@ -47,7 +47,7 @@ public class UserService implements IUserService{
 
 	@Override
 	public User deleteUser(int userId) {
-		LOG.info("UserService addUser");
+		LOG.info("UserService deleteUser");
 		if(userRepository.existsById(userId)) {
 			LOG.info("User will be deleted");
 			userRepository.deleteById(userId);
@@ -61,7 +61,7 @@ public class UserService implements IUserService{
 
 	@Override
 	public User viewUser(int userId) {
-		LOG.info("UserService addUser");
+		LOG.info("UserService viewUser");
 		if(userRepository.existsById(userId)) {
 			LOG.info("Viewing user");
 			return userRepository.getById(userId);
