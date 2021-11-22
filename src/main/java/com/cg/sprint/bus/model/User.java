@@ -119,8 +119,8 @@ public class User {
 		this.userName = userName;
 	}
 
-	@Override
-	public String toString() {
+	@
+ublic String toString() {
 		return "User [userLoginId=" + userLoginId + ", userName=" + userName + ", password=" + password + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", contact=" + contact + ", email=" + email
 				+ ", reservation=" + reservation + "]";

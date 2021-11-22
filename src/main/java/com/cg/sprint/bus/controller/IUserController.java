@@ -8,9 +8,9 @@ import com.cg.sprint.bus.model.User;
 
 public interface IUserController {
 
-	public ResponseEntity<User> addBus(User user);
-	public ResponseEntity<User> updateBus(User user);
-	public ResponseEntity<User> deletebus(int userId);
-	public ResponseEntity<User> viewBus(int userId);
-	public List<User> viewAllBus();
+	public ResponseEntity<User> addUser(User user);
+	public ResponseEntity<User> updateUser(User user);
+	public ResponseEntity<User> deleteUser(int userId);
+	public ResponseEntity<User> viewUser(int userId);
+	public List<User> viewAllUser();
 }
