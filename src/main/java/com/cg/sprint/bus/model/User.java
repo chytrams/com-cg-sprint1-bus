@@ -1,6 +1,6 @@
 package com.cg.sprint.bus.model;
 
-import java.time.LocalTime;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
