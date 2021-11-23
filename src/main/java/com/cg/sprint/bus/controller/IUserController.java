@@ -33,7 +33,7 @@ private static final Logger LOG = LoggerFactory.getLogger(IUserController.class)
 		LOG.info("addUser Controller");
 		User u = userService.addUser(user);
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("message", "The User has been added to the dataBase");
+		headers.add("message", "The User added successfully");
 		ResponseEntity<User> response = new ResponseEntity<User>(u, headers, HttpStatus.OK);
 		return response;
 	}
