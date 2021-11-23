@@ -52,9 +52,9 @@ public class UserController implements IUserController{
 
 	@Override
 	@PostMapping("/deleteUser")
-	public ResponseEntity<User> deleteUser(@PathVariable(name = "userId") int userId) {
+	public ResponseEntity<User> deleteUser(@PathVariable(name = "userLoginId") int userLoginId) {
 		LOG.info("deleteUser Controller");
-		User u = userService.deleteUser(userId);
+		User u = userService.deleteUser(userLoginId);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", "The User has been deleted from the dataBase");
 		ResponseEntity<User> response = new ResponseEntity<User>(u, headers, HttpStatus.OK);
@@ -63,9 +63,9 @@ public class UserController implements IUserController{
 
 	@Override
 	@GetMapping("/viewUser")
-	public ResponseEntity<User> viewUser(@PathVariable(name = "userId") int userId) {
+	public ResponseEntity<User> viewUser(@PathVariable(name = "userLoginId") int userLoginId) {
 		LOG.info("viewUser Controller");
-		User u = userService.viewUser(userId);
+		User u = userService.viewUser(userLoginId);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", "This is the available User");
 		ResponseEntity<User> response = new ResponseEntity<User>(u, headers, HttpStatus.OK);

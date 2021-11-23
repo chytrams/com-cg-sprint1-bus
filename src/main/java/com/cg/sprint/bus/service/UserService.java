@@ -46,29 +46,29 @@ public class UserService implements IUserService{
 	}
 
 	@Override
-	public User deleteUser(int userId) {
+	public User deleteUser(int userLoginId) {
 		LOG.info("UserService deleteUser");
-		if(userRepository.existsById(userId)) {
+		if(userRepository.existsById(userLoginId)) {
 			LOG.info("User will be deleted");
-			userRepository.deleteById(userId);
+			userRepository.deleteById(userLoginId);
 			return null;
 		}
 		else {
 			LOG.info("User does not exist");
-			throw new UserNotFoundException("User with " + userId + " does not exist");
+			throw new UserNotFoundException("User with " + userLoginId + " does not exist");
 		}
 	}
 
 	@Override
-	public User viewUser(int userId) {
+	public User viewUser(int userLoginId) {
 		LOG.info("UserService viewUser");
-		if(userRepository.existsById(userId)) {
+		if(userRepository.existsById(userLoginId)) {
 			LOG.info("Viewing user");
-			return userRepository.getById(userId);
+			return userRepository.getById(userLoginId);
 		}
 		else {
 			LOG.info("User does not exist");
-			throw new UserNotFoundException("User with " + userId + " does not exist");
+			throw new UserNotFoundException("User with " + userLoginId + " does not exist");
 		}
 	}
 

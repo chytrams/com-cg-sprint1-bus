@@ -10,7 +10,7 @@ public interface IUserService {
 
 	public User addUser(User user);
 	public User updateUser(User user);
-	public User deleteUser(int userId);
-	public User viewUser(int userId);
+	public User deleteUser(int userLoginId);
+	public User viewUser(int userLoginId);
 	public List<User> viewAllUser();
 }

@@ -10,7 +10,7 @@ public interface IUserController {
 
 	public ResponseEntity<User> addUser(User user);
 	public ResponseEntity<User> updateUser(User user);
-	public ResponseEntity<User> deleteUser(int userId);
-	public ResponseEntity<User> viewUser(int userId);
+	public ResponseEntity<User> deleteUser(int userLoginId);
+	public ResponseEntity<User> viewUser(int userLoginId);
 	public List<User> viewAllUser();
 }
