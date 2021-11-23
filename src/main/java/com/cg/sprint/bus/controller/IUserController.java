@@ -38,14 +38,11 @@ private static final Logger LOG = LoggerFactory.getLogger(IUserController.class)
 		return response;
 	}
 	
+	
 	@PutMapping("/updateUser")
-	public ResponseEntity<User> updateUser(@RequestBody User user){
-		LOG.info("updateUser Controller");
-		User u = userService.updateUser(user);
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("message", "The User has been updated in the dataBase");
-		ResponseEntity<User> response = new ResponseEntity<User>(u, headers, HttpStatus.OK);
-		return response;
+	public User updateUser(@RequestBody User user) {
+		System.out.println("Controller updateUser");
+		return userService.updateUser(user);
 	}
 	
 
@@ -68,7 +65,18 @@ private static final Logger LOG = LoggerFactory.getLogger(IUserController.class)
 		ResponseEntity<User> response = new ResponseEntity<User>(u, headers, HttpStatus.OK);
 		return response;
 	}
-	
+
+//	@GetMapping("/viewUser/{userId}")
+//	public ResponseEntity<User> viewUser(@PathVariable(name = "userId") int userId) {
+//		LOG.info("viewUser Controller");
+//		User u = userService.viewUser(userId);
+//		LOG.info(u.toString());
+//		HttpHeaders headers = new HttpHeaders();
+//		headers.add("message", "This user is available in the database.");
+//		LOG.info(headers.toString());
+//		ResponseEntity<User> response = new ResponseEntity<User>(u, headers, HttpStatus.OK);
+//		return response;
+//	}
 	
 
 	
