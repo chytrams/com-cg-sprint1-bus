@@ -60,8 +60,9 @@ private static final Logger LOG = LoggerFactory.getLogger(IUserService.class);
 	public User viewUser(int userId) {
 		LOG.info("viewService viewUser");
 		if(userRepository.existsById(userId)) {
-			LOG.info("Viewing bus");
-			return userRepository.getById(userId);
+			LOG.info("Viewing user");
+//			return userRepository.getById(userId);
+			return userRepository.findById(userId).get();
 		}
 		else {
 			LOG.info("User does not exist");

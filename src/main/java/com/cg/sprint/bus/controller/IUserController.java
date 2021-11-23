@@ -56,14 +56,20 @@ private static final Logger LOG = LoggerFactory.getLogger(IUserController.class)
 		return response;
 	}
 	
+//	@GetMapping("/viewUser")
+//	public ResponseEntity<User> viewUser(@PathVariable(name = "userId") int userId){
+//		LOG.info("viewUser Controller");
+//		User u = userService.viewUser(userId);
+//		HttpHeaders headers = new HttpHeaders();
+//		headers.add("message", "This is the available bus");
+//		ResponseEntity<User> response = new ResponseEntity<User>(u, headers, HttpStatus.OK);
+//		return response;
+//	}
+	
 	@GetMapping("/viewUser/{userId}")
-	public ResponseEntity<User> viewUser(@PathVariable(name = "userId") int userId){
-		LOG.info("viewUser Controller");
-		User u = userService.viewUser(userId);
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("message", "This is the available bus");
-		ResponseEntity<User> response = new ResponseEntity<User>(u, headers, HttpStatus.OK);
-		return response;
+	public User viewUser(@PathVariable(name = "userId") int userId) {
+		System.out.println("Controller getuserbyId");
+		return userService.viewUser(userId);
 	}
 
 //	@GetMapping("/viewUser/{userId}")
