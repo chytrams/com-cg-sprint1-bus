@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
-	int userLoginId;
+	int userId;
 	
 	@Column
 	String userName;
@@ -40,12 +40,12 @@ public class User {
 		super();
 	}
 
-	public User(int userLoginId,String userName,String password,
+	public User(int userId,String userName,String password,
 			String firstName,String lastName,long contact,String email) {
 //		,Reservation reservation) {
 	
 		super();
-		this.userLoginId = userLoginId;
+		this.userId = userId;
 		this.userName = userName;
 		this.password = password;
 		this.firstName = firstName;
@@ -105,12 +105,12 @@ public class User {
 //		this.reservation = reservation;
 //	}
 
-	public int getUserLoginId() {
-		return userLoginId;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUserLoginId(int userLoginId) {
-		this.userLoginId = userLoginId;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	
 	public String getUserName() {
@@ -123,7 +123,7 @@ public class User {
 
 	@Override
 public String toString() {
-		return "User [userLoginId=" + userLoginId + ", userName=" + userName + ", password=" + password + ", firstName=" + firstName
+		return "User [userLoginId=" + userId + ", userName=" + userName + ", password=" + password + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", contact=" + contact + ", email=" + email + "]";
 //				+ ", reservation=" + reservation + "]";
 	}
