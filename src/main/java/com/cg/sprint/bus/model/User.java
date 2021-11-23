@@ -123,7 +123,7 @@ public class User {
 
 	@Override
 public String toString() {
-		return "User [userLoginId=" + userId + ", userName=" + userName + ", password=" + password + ", firstName=" + firstName
+		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", contact=" + contact + ", email=" + email + "]";
 //				+ ", reservation=" + reservation + "]";
 	}
