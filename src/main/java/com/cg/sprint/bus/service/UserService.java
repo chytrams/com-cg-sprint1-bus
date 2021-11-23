@@ -7,24 +7,24 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-//import com.cg.sprint.bus.exception.UserAlreadyExistsException;
-//import com.cg.sprint.bus.exception.UserNotFoundException;
+import com.cg.sprint.bus.exception.UserAlreadyExistsException;
+import com.cg.sprint.bus.exception.UserNotFoundException;
 import com.cg.sprint.bus.model.User;
-//import com.cg.sprint.bus.repository.UserRepository;
+import com.cg.sprint.bus.repository.IUserRepository;
 
 public class UserService implements IUserService{
 	
 	private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 	
 	@Autowired
-	private UserRepository userRepository;
+	private IUserRepository userRepository;
 
 	@Override
 	public User addUser(User user) {
 		LOG.info("UserService adduser");
-		if(userRepository.existsById(user.getUserId())) {
+		if(userRepository.existsById(user.getUserLoginId())) {
 			LOG.info("User already exists");
-			throw new UserAlreadyExistsException("User with " + user.getUserId() + " as id already exists");
+			throw new UserAlreadyExistsException("User with " + user.getUserLoginId() + " as id already exists");
 		}
 		else {
 			LOG.info("User added");
@@ -35,13 +35,13 @@ public class UserService implements IUserService{
 	@Override
 	public User updateUser(User user) {
 		LOG.info("UserService updateUser");
-		if(userRepository.existsById(user.getUserId())) {
+		if(userRepository.existsById(user.getUserLoginId())) {
 			LOG.info("User exists and will be updated");
 			return userRepository.save(user);
 		}
 		else {
 			LOG.info("User does not exist");
-			throw new UserNotFoundException("User with " + user.getUserId() + "as Id does not exist");
+			throw new UserNotFoundException("User with " + user.getUserLoginId() + "as Id does not exist");
 		}
 	}
 

@@ -32,8 +32,8 @@ public class User {
 	@Column
 	String email;
 	
-	@Column
-	Reservation reservation;
+//	@Column
+//	Reservation reservation;
 
 	
 	public User() {
@@ -41,7 +41,9 @@ public class User {
 	}
 
 	public User(int userLoginId,String userName,String password,
-			String firstName,String lastName,long contact,String email,Reservation reservation) {
+			String firstName,String lastName,long contact,String email) {
+//		,Reservation reservation) {
+	
 		super();
 		this.userLoginId = userLoginId;
 		this.userName = userName;
@@ -50,7 +52,7 @@ public class User {
 		this.lastName = lastName;
 		this.contact = contact;
 		this.email = email;
-		this.reservation = reservation;
+//		this.reservation = reservation;
 		
 	}
 
@@ -95,13 +97,13 @@ public class User {
 		this.email = email;
 	}
 
-	public Reservation getReservation() {
-		return reservation;
-	}
-
-	public void setReservation(Reservation reservation) {
-		this.reservation = reservation;
-	}
+//	public Reservation getReservation() {
+//		return reservation;
+//	}
+//
+//	public void setReservation(Reservation reservation) {
+//		this.reservation = reservation;
+//	}
 
 	public int getUserLoginId() {
 		return userLoginId;
@@ -119,11 +121,11 @@ public class User {
 		this.userName = userName;
 	}
 
-	@
-ublic String toString() {
+	@Override
+public String toString() {
 		return "User [userLoginId=" + userLoginId + ", userName=" + userName + ", password=" + password + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", contact=" + contact + ", email=" + email
-				+ ", reservation=" + reservation + "]";
+				+ ", lastName=" + lastName + ", contact=" + contact + ", email=" + email + "]";
+//				+ ", reservation=" + reservation + "]";
 	}
 	
 	
